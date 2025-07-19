@@ -10,7 +10,7 @@ execute if score #game bs.tens_timer matches 0 run scoreboard players remove #ga
 execute as @a[gamemode=!spectator,scores={bs.found_block=0}] run function datapack:block_shuffle/periodic_block_check with entity @s
 
 # Show timer warnings
-execute if score #game bs.tens_timer matches 0 run execute if score #game bs.tens_count matches 24 run tellraw @a {"text":"4 minute remaining!","color":"green"}
+execute if score #game bs.tens_timer matches 0 run execute if score #game bs.tens_count matches 30 run tellraw @a {"text":"5 minute remaining!","color":"green"}
 execute if score #game bs.tens_timer matches 0 run execute if score #game bs.tens_count matches 15 run tellraw @a {"text":"2.5 minute remaining!","color":"yellow"}
 execute if score #game bs.tens_timer matches 0 run execute if score #game bs.tens_count matches 6 run tellraw @a {"text":"1 minute remaining!","color":"yellow", "bold":true}
 execute if score #game bs.tens_timer matches 0 run execute if score #game bs.tens_count matches 3 run tellraw @a {"text":"30 seconds remaining!","color":"red"}

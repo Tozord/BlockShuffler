@@ -1,5 +1,5 @@
 # Assign a random block to the current player (called by trigger system)
-execute store result score #temp random_block run random value 0..1090
+execute store result score #temp random_block run random value 0..909
 
 # Select the block based on random number
 function datapack:select_block

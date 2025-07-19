@@ -2,10 +2,10 @@ import json
 from pathlib import Path
 
 # Path to the JSON file containing block IDs.
-DATA_JSON = Path("data.json")
+DATA_JSON = Path("data/data.json")
 
 # Output path for the generated function file.
-OUTPUT_FILE = Path("data/datapack/function/select_block.mcfunction")
+OUTPUT_FILE = Path("data/data/datapack/function/select_block.mcfunction")
 
 # Filter out blocks that are impossible to obtain in survival (exception: keep bedrock)
 EXCLUDE_BLOCKS = {
@@ -35,7 +35,7 @@ EXCLUDE_BLOCKS = {
     "potted_oak_sapling", "potted_open_eyeblossom", "potted_orange_tulip", "potted_oxeye_daisy", "potted_pale_oak_sapling",
     "potted_pink_tulip", "potted_poppy", "potted_red_mushroom", "potted_red_tulip", "potted_spruce_sapling", "potted_torchflower",
     "potted_warped_fungus", "potted_warped_roots", "potted_white_tulip", "potted_wither_rose", "purple_shulker_box",
-    "purpur_block", "purpur_pillar", "purpurslab", "purpur_stairs", "red_shulker_box", "respawn_anchor", "shulker_box",
+    "purpur_block", "purpur_pillar", "purpur_slab", "purpur_stairs", "red_shulker_box", "respawn_anchor", "shulker_box",
     "skeleton_skull", "skeleton_wall_skull", "slime_block", "small_amethyst_bud", "sniffer_egg", "spawner", "spore_blossom",
     "test_block", "test_instance_block", "torchflower", "torchflower_crop", "trial_spawner", "vault", "verdant_froglight",
     "waxed_exposed_chiseled_copper", "waxed_exposed_copper", "waxed_exposed_copper_bulb", "waxed_exposed_copper_door", "waxed_exposed_copper_grate", "waxed_exposed_copper_trapdoor",
@@ -82,7 +82,7 @@ def main():
 
     for idx, block in enumerate(blocks):
         lines.append(
-            f"execute if score #temp random_block matches {idx} run data modify storage datapack:temp selected_block set value \"minecraft:{block}\""
+            f"execute if score #temp random_block matches {idx} run data modify storage datapack:temp selected_block set value \"{block}\""
         )
 
     # Ensure output directory exists.

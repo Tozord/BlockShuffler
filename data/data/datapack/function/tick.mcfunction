@@ -9,8 +9,8 @@ execute as @a[scores={bs.end=1..}] run function datapack:block_shuffle/end_game
 execute as @a[scores={bs.settings=1..}] run function datapack:block_shuffle/settings
 
 # Game logic based on state
-execute as @a if score #game bs.game_state matches 2 run function datapack:block_shuffle/timer_changes
-execute as @a if score #game bs.game_state matches 1 run function datapack:block_shuffle/countdown
+execute if score #game bs.game_state matches 2 run function datapack:block_shuffle/timer_changes
+execute if score #game bs.game_state matches 1 run function datapack:block_shuffle/countdown
 
 
 

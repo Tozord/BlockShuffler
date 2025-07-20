@@ -12,7 +12,7 @@ scoreboard players set #game bs.tick_timer 0
 scoreboard players set @a[gamemode=!spectator] bs.found_block 0
 
 # Assign random blocks to all surviving players
-execute as @a[gamemode=!spectator] run function datapack:assign_random_block_to_player
+execute as @a[gamemode=!spectator] run function datapack:assign_random_block_to_player with entity @s
 
 # Show timer
 tellraw @a {"text":"You have 10 minutes to find your block!","color":"aqua"}
